@@ -181,8 +181,78 @@ header {
     font-size: 13px;
 }
 
+.about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.section-heading {
+    margin-bottom: 60px;
+}
 
+.section-label {
+    color: #666 !important;
+    font-size: 14px !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-size: clamp(40px, 6vw, 64px) impr !important;
+    letter-spacing: -2px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #999;
+}
+
+.about-card {
+    padding: 30px;
+    border: 1px solid #292929;
+    border-radius: 14px;
+    background-color: #141414;
+}
+
+.about-card-icon {
+    font-family: monospace;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.about-card h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.about-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.about-card li {
+    color: #888;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #222
+}
 
 section:not(.hero) {
     max-width: 1100px;
@@ -203,7 +273,44 @@ section:not(.hero) p {
     line-height: 1.7;
 }
 
+.skills-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.skils-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    position: relative;
+    padding: 35px;
+    border: 1px solid #292929;
+    border-radius: 14px;
+    background: #141414;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+.skill-number{
+    display: block;
+    color: #555;
+    font-family: monospace;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+.skill-card h3{
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+.skill-card p{
+    color: #777;
+    font-size: 16px !important;
+    line-height: 1.7;
+}
 
 
 @media (max-width: 700px) {
@@ -243,5 +350,20 @@ section:not(.hero) p {
     .hero-tech {
         max-width: 300px;
         margin: auto;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .skill-card{
+        padding: 25px;
     }
 }
