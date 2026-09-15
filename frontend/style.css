@@ -14,9 +14,6 @@ body {
     color: white;
 }
 
-
-
-
 header {
     width: 100%;
     position: fixed;
@@ -29,7 +26,6 @@ header {
     max-width: 1100px;
     margin: auto;
     padding: 20px 30px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,19 +53,14 @@ header {
     color: white;
 }
 
-
-
-
 .hero {
     min-height: 100vh;
-
+    padding: 120px 30px 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-
-    padding: 100px 30px 80px;
+    position: relative;
     overflow: hidden;
 }
 
@@ -88,13 +79,13 @@ header {
 }
 
 .hero-content {
-    max-width: 750px;
+    position: relative;
     z-index: 1;
     max-width: 850px;
 }
 
 .greeting {
-    color: #aaa;
+    color: #888;
     font-size: 18px;
     margin-bottom: 15px;
     letter-spacing: 2px;
@@ -116,15 +107,12 @@ header {
 }
 
 .hero-description {
+    max-width: 650px;
+    margin: 0 auto 40px;
     color: #888;
     font-size: 18px;
     line-height: 1.8;
-    max-width: 650px;
-    margin: 0 auto 40px;
 }
-
-
-
 
 .hero-buttons {
     display: flex;
@@ -134,17 +122,12 @@ header {
 }
 
 .btn {
-    padding: 14px 24px;
     display: inline-block;
+    padding: 14px 24px;
     border-radius: 8px;
-
     text-decoration: none;
     font-weight: 600;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease;
-
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .primary-btn {
@@ -181,10 +164,11 @@ header {
     font-size: 13px;
 }
 
-.about-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+section:not(.hero) {
+    max-width: 1100px;
+    min-height: 70vh;
+    margin: auto;
+    padding: 100px 30px;
 }
 
 .section-heading {
@@ -200,13 +184,19 @@ header {
 }
 
 .section-heading h2 {
-    font-size: clamp(40px, 6vw, 64px) impr !important;
+    font-size: clamp(40px, 6vw, 64px) !important;
     letter-spacing: -2px;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .about-content {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
     gap: 80px;
     align-items: start;
 }
@@ -227,7 +217,7 @@ header {
     padding: 30px;
     border: 1px solid #292929;
     border-radius: 14px;
-    background-color: #141414;
+    background: #141414;
 }
 
 .about-card-icon {
@@ -251,26 +241,7 @@ header {
 .about-card li {
     color: #888;
     padding-bottom: 12px;
-    border-bottom: 1px solid #222
-}
-
-section:not(.hero) {
-    max-width: 1100px;
-    min-height: 70vh;
-
-    margin: auto;
-    padding: 100px 30px;
-}
-
-section:not(.hero) h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-section:not(.hero) p {
-    color: #aaa;
-    font-size: 18px;
-    line-height: 1.7;
+    border-bottom: 1px solid #222;
 }
 
 .skills-section {
@@ -279,7 +250,7 @@ section:not(.hero) p {
     justify-content: center;
 }
 
-.skils-grid {
+.skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -291,9 +262,12 @@ section:not(.hero) p {
     border: 1px solid #292929;
     border-radius: 14px;
     background: #141414;
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #555;
 }
 
 .skill-number {
@@ -332,78 +306,156 @@ section:not(.hero) p {
     border: 1px solid #292929;
     border-radius: 14px;
     background: #141414;
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
     border-color: #555;
 }
-.project-top{
+
+.project-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 55px;
 }
-.project-number{
+
+.project-number {
     color: #555;
     font-family: monospace;
     font-size: 14px;
 }
-.project-status{
+
+.project-status {
     padding: 6px 12px;
-    border:1px solid #333;
+    border: 1px solid #333;
     border-radius: 20px;
     color: #777;
     font-size: 12px;
 }
-.project-content{
+
+.project-content {
     max-width: 700px;
 }
-.project-content h3{
+
+.project-content h3 {
     font-size: 32px;
     margin-bottom: 15px;
-
 }
-.project-content p{
+
+.project-content p {
     color: #888;
     font-size: 17px !important;
     line-height: 1.7;
     margin-bottom: 25px;
 }
-.project-tech{
+
+.project-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
-.project-tech span{
-    padding:7px 12px;
-    border:1px solid #292929;
+
+.project-tech span {
+    padding: 7px 12px;
+    border: 1px solid #292929;
     border-radius: 20px;
     color: #777;
     font-size: 12px;
 }
-.project-links{
+
+.project-links {
     display: flex;
     gap: 25px;
     margin-top: 35px;
     padding-top: 25px;
     border-top: 1px solid #222;
 }
-.project-link{
+
+.project-link {
     color: white;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
     transition: color 0.3s ease;
 }
-.project-link:hover{
+
+.project-link:hover {
     color: #888;
 }
 
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 80px;
+    align-items: center;
+}
+
+.contact-text {
+    max-width: 600px;
+}
+
+.contact-text>p {
+    color: #888;
+    font-size: 20px !important;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.github-link {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.github-link:hover {
+    color: #888;
+}
+
+.contact-card {
+    padding: 40px;
+    border: 1px solid #292929;
+    border-radius: 14px;
+    background: #141414;
+}
+
+.contact-card p {
+    color: #666 !important;
+    font-size: 14px !important;
+    margin-bottom: 15px;
+}
+
+.email-link {
+    display: block;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #888;
+}
+
+.nav-links a.active {
+    color: white;
+}
+
 @media (max-width: 700px) {
+    .navbar {
+        padding: 18px 20px;
+    }
 
     .nav-links {
         gap: 15px;
@@ -411,14 +463,6 @@ section:not(.hero) p {
 
     .nav-links a {
         font-size: 14px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
     }
 
     .hero {
@@ -435,6 +479,10 @@ section:not(.hero) p {
         max-width: 300px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .btn {
+        width: 100%;
     }
 
     .hero-tech {
@@ -474,5 +522,18 @@ section:not(.hero) p {
     .project-links {
         flex-direction: column;
         gap: 15px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-card {
+        padding: 25px;
+    }
+
+    .email-link {
+        font-size: 18px;
     }
 }
