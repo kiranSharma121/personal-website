@@ -24,6 +24,6 @@ https://personal-website-phi-pied.vercel.app/
 
 ## Author
 
-Kiran Sharma
+Utsab Sapkota
 
 GitHub: https://github.com/kiranSharma121
