@@ -1,3 +1,11 @@
+:root {
+    --background: #0f0f0f;
+    --text: white;
+    --card: #141414;
+    --border: #292929;
+    --secondary: #888;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -450,6 +458,54 @@ section:not(.hero) {
 
 .nav-links a.active {
     color: white;
+}
+
+.theme-toggle {
+    border: 1px solid #333;
+    background: transparent;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+body.light-mode {
+    --background: #f4f4f4;
+    --text: #111;
+    --card: white;
+    --border: #ddd;
+    --secondary: #555;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a {
+    color: var(--secondary);
+}
+
+.about-card,
+.skill-card,
+.project-card,
+.contact-card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+}
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
 }
 
 @media (max-width: 700px) {
