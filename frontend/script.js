@@ -46,3 +46,46 @@ const navLink=document.querySelector(".nav-links");
 menuButton.addEventListener("click",()=>{
     navLink.classList.toggle("show")
 })
+const learningButtons=document.querySelectorAll(".learning-button");
+const learningTitle=document.querySelector("#learningTitle");
+const learningDescription=document.querySelector("#learningDescription");
+const progressBar=document.querySelector("#progressBar");
+const progressText=document.querySelector("#progressText");
+
+const learningData={
+    html:{
+        title:"HTML",
+        description:"Learning semantic HTML and how to structure accessible websites.",
+        progress:80
+    },
+    css:{
+        title:"CSS",
+        description:"Learning layouts,responsive design,and creating clean interfaces.",
+        progress:70
+    },
+    javascript:{
+        title:"JavaScript",
+        description:"learning DOM manipulation,events,and browser APIs.",
+        progress:80
+    },
+    git:{
+        title:"Git & GitHub",
+        description:"Learning version control,branches,commits,and collaboration.",
+        progress:75
+    }
+}
+learningButtons.forEach((button)=>{
+    button.addEventListener("click",()=>{
+        const topic =button.dataset.topic;
+        const selected=learningData[topic];
+
+        learningButtons.forEach((item)=>{
+            item.classList.remove("active");
+        });
+        button.classList.add("active");
+        learningTitle.textContent= selected.title;
+        learningDescription.textContent=selected.description;
+        progressBar.style.width=`${selected.progress}%`;
+        progressText.textContent=`${selected.progress}%`;
+    })
+})
