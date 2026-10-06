@@ -26,8 +26,10 @@
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </div>
-        <button class="menu-button" id="menuButton">☰</button>
-        <button class="theme-toggle" id="themeToggle">☀️</button>
+        <div class="nav-controls">
+          <button class="menu-button" id="menuButton">☰</button>
+          <button class="theme-toggle" id="themeToggle">☀️</button>
+        </div>
       </nav>
     </header>
 
@@ -91,13 +93,26 @@
             <div class="about-card-icon">&lt;/&gt;</div>
 
             <h3>Currently learning</h3>
-
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>Git &amp; GitHub</li>
-            </ul>
+            <div class="learning-buttons">
+              <button class="learning-button active" data-topic="html">
+                HTML
+              </button>
+              <button class="learning-button" data-topic="css">CSS</button>
+              <button class="leaerning-button" data-topic="javascript">
+                JavaScript
+              </button>
+              <button class="learning-button" data-topic="git">Git</button>
+            </div>
+            <div class="learning-info">
+              <h4 id="learningTitle">HTML</h4>
+              <p id="learningDescription">
+                Learning how to structure websites using semantic HTML.
+              </p>
+              <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+              </div>
+              <span id="progressText">80%</span>
+            </div>
           </div>
         </div>
       </section>

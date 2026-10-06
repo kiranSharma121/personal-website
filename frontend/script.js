@@ -41,4 +41,8 @@ themeToggle.addEventListener("click",()=>{
        
     }
 })
-
+const menuButton =document.querySelector("#menuButton");
+const navLink=document.querySelector(".nav-links");
+menuButton.addEventListener("click",()=>{
+    navLink.classList.toggle("show")
+})
