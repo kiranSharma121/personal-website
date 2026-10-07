@@ -89,3 +89,32 @@ learningButtons.forEach((button)=>{
         progressText.textContent=`${selected.progress}%`;
     })
 })
+const githubUsername="kiranSharma121";
+const githubAvatar=document.querySelector("#githubAvatar");
+const githubName=document.querySelector("#githubName");
+const githubUsernameElement=document.querySelector("#githubUsername");
+const repoCount=document.querySelector("#repoCount");
+const followerCount=document.querySelector("#followerCount");
+const followingCount=document.querySelector("#followingCount");
+const githubError=document.querySelector("#githubError");
+async function loadGithubProfile(){
+    try{
+        const response = await fetch(
+            `https://api.github.com/users/${githubUsername}`
+        );
+        if(!response.ok){
+            throw new Error("could not load GitHub profile");
+        }
+        const user =await response.json();
+        githubAvatar.src=user.avatar_url;
+        githubName.textContent=user.name || githubUsername;
+        githubUsernameElement.textContent=`@${user.login}`;
+        repoCount.textContent=user.public_repos;
+        followerCount.textContent=user.followers;
+        followingCount.textContent=user.following;
+    }catch(error){
+        githubName.textContent="GitHub unavailable";
+        githubError.textContent="Unable to load GitHub information";
+    }
+}
+loadGithubProfile();
