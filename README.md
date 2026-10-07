@@ -20,7 +20,7 @@ A personal portfolio website showcasing my skills, projects, education, and expe
 
 ## Live Website
 
-https://personal-website-phi-pied.vercel.app/
+https://personal-website-frontend-iota.vercel.app/
 
 ## Author
 
